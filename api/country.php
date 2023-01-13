@@ -15,6 +15,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button><a href="../index.html">Back</a></button>
     <form action="" method="post">
         <input type="text" name="country" placeholder="Country name" required><br><br>
         <button type="submit">Submit</button>

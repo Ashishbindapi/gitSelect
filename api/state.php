@@ -1,7 +1,6 @@
 <?php
     include('./class/init.php');
     $stateController = new StateController(new stateModel($connection));
-    $data = $stateController->countrydata();
     if(isset($_POST['state_name']))
     {
         echo $stateController->save($_POST);
@@ -16,12 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <select name="" id="">
-        <option value="">Country name</option>
-        <?php foreach($data as $country){?>
-        <option value=""><?php echo $country['country_name'] ?></option>
-        <?php }?>
-    </select>
+    <button><a href="../index.html">Back</a></button>
     <form action="" method="post">
         <input type="text" name="state_name" placeholder="State name" required><br><br>
         <button type="submit" required>Submit</button>
