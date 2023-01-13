@@ -7,9 +7,9 @@
             $this->model = $model;
         }
 
-        public function countrydata()
+        public function statedata()
         {
-          return  $this->model->allcountry();
+          return  $this->model->allstate();
         }
 
         public function save($data)

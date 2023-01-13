@@ -7,9 +7,9 @@
             $this->model = $model;
         }
 
-        public function statedata()
+        public function districdata()
         {
-          return  $this->model->allstatedata();
+          return  $this->model->alldistricdata();
         }
 
         public function save($data)

@@ -8,9 +8,9 @@
             $this->conn = $conn;
         }
         
-        public function allcountry()
+        public function allstate()
         {
-            $sql = "SELECT * FROM countries";
+            $sql = "SELECT * FROM states";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

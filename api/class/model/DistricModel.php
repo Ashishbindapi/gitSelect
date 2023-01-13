@@ -8,9 +8,9 @@
             $this->conn = $conn;
         }
         
-        public function allstatedata()
+        public function alldistricdata()
         {
-            $sql = "SELECT * FROM states";
+            $sql = "SELECT * FROM district";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
