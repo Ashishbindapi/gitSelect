@@ -8,11 +8,11 @@
             $this->conn = $conn;
         }
         
-        public function allstate()
+        public function allstate($id)
         {
-            $sql = "SELECT * FROM states";
+            $sql = "SELECT * FROM states WHERE country_id = ?";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([$id]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 

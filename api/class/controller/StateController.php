@@ -7,9 +7,9 @@
             $this->model = $model;
         }
 
-        public function statedata()
+        public function statedata($id)
         {
-          return  $this->model->allstate();
+          return  $this->model->allstate($id);
         }
 
         public function save($data)

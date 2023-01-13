@@ -7,7 +7,7 @@
     header("Access-Control-Allow-Headers: X-Requested-With");
 
     include('./class/init.php');
-    $countryController = new CountryController(new CountryModel($connection));
-    $data = $countryController->countrydata();
+    $districController = new DistricController(new DistricModel($connection));
+    $data = $districController->districdata($_GET['steate_id']);
     header("Content-type: application/json; charset=utf-8");
     echo json_encode( $data );
