@@ -10,9 +10,9 @@
         
         public function alldistricdata($id)
         {
-            $sql = "SELECT * FROM district WHERE steate_id =?";
+            $sql = "SELECT * FROM district";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$id]);
+            $stmt->execute([$id['state_id']]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
