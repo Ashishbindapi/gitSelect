@@ -1,16 +1,15 @@
 $(document).ready(function(){
   var select = $('<select>').attr('id', 'countries')
-  select.append($('<option>').text('select').val(''))
+  select.append($('<option>').text('Select country').val(''))
    $.get( "http://dev7.pro/gitSelect/api/countries.php", function( countries ) {
    $.each( countries, function( key, country ) {
     select.append($('<option>').text(country.country_name).val(country.id))
     })
-    $('#countries').remove();
     $('#app').append(select)
   })
   $(document).on('change', '#countries', function(){
     var select = $('<select>').attr('id', 'state')
-    select.append($('<option>').text('select').val(''))
+    select.append($('<option>').text('Select state').val(''))
     $.get('http://dev7.pro/gitSelect/api/states.php?country_id=' + $(this).val(), function( states ) {
      $.each( states, function( key, state ) {
       select.append($('<option>').text(state.state_name).val(state.country_id))
@@ -18,16 +17,16 @@ $(document).ready(function(){
       $('#state').remove();
       $('#app').append(select)
     })
-  })
-  $(document).on('change', '#state', function(){
-    var select = $('<select>').attr('id', 'distric')
-    select.append($('<option>').text('select').val(''))
-    $.get('http://dev7.pro/gitSelect/api/district.php?country_id=' + $(this).val(), function( district ) {
-     $.each( district, function( key, distric ) {
-      select.append($('<option>').text(distric.district_name).val(distric.steate_id))
+    $(document).on('change', '#state', function(){
+      var select = $('<select>').attr('id', 'distric')
+      select.append($('<option>').text('Select distric').val(''))
+      $.get('http://dev7.pro/gitSelect/api/district.php?steate_id=' + $(this).val(), function( district ) {
+       $.each( district, function( key, distric ) {
+        select.append($('<option>').text(distric.state_name).val(distric.country_id))
+        })
+        $('#distric').remove();
+        $('#app').append(select)
       })
-      $('#distric').remove();
-      $('#app').append(select)
     })
   })
 })

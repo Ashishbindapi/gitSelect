@@ -10,7 +10,7 @@
         
         public function allstate($id)
         {
-            $sql = "SELECT * FROM states WHERE country_id = ?";
+            $sql = "SELECT * FROM states WHERE country_id =?";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
