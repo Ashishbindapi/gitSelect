@@ -8,6 +8,6 @@
 
     include('./class/init.php');
     $districController = new DistricController(new DistricModel($connection));
-    $data = $districController->districdata($_GET['state_id']);
+    $data = $districController->districdata($_GET['steate_id']);
     header("Content-type: application/json; charset=utf-8");
-    echo json_encode($data);
+    echo json_encode( $data );

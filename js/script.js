@@ -13,7 +13,7 @@ $(document).on( 'change', '#countries', function(){
   select.append($('<option>').text('Select state').val(''))
    $.get( "http://dev7.pro/gitSelect/api/states.php?country_id="+ $(this).val(), function( states ) {
    $.each( states, function( key, state ) {
-    select.append($('<option>').text(state.state_name).val(state.country_id))
+    select.append($('<option>').text(state.state_name).val(state.state_id))
     })
     $('#states').remove()
     $('#app').append(select)
@@ -24,7 +24,7 @@ $(document).on( 'change', '#states', function(){
   select.append($('<option>').text('Select state').val(''))
    $.get( "http://dev7.pro/gitSelect/api/district.php?steate_id=" + $(this).val(), function( district ) {
    $.each( district, function( key, distric ) {
-    select.append($('<option>').text(distric.district_name).val(distric.state_id))
+    select.append($('<option>').text(distric.district_name).val(distric.district_id))
     })
     $('#district').remove()
     $('#app').append(select)
